@@ -1,1 +1,173 @@
-<p>login-page works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<style>
+    body{
+        background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+        background-blend-mode: color;
+            background-color: rgba(0, 0, 0, 0.512);
+            background-size: cover;
+            background-attachment: fixed;
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .loginPanel{
+        margin: 150px;
+        height: 49vh;
+        width: 45vh;
+        border-radius: 30px;
+        box-shadow: 0px 20px 100px;
+        padding: 1.1rem;
+        text-align: center;
+        overflow: hidden;
+    }
+    .btn{
+        margin-top: 4rem;
+    }
+    input{
+        outline: none;
+            border: none;
+            padding: 1.1rem;
+            border-bottom: 6px solid;
+            background: transparent;
+            color: white;
+            width: 35vh;
+            height: 2.3rem;
+    }
+
+    ::placeholder{
+            color: rgba(255, 255, 255, 0.586);
+            font-size: 15px;
+        }
+
+        h2{
+            color: rgb(255, 255, 255);
+            margin-bottom: 18px;
+        }
+
+        .btn{
+            
+            border: 2px solid #2196f3;
+            outline: none;
+            color: #007de3;
+            font-size: 10px;
+            font-weight: lighter;
+            letter-spacing: 4px;
+            
+        }
+
+        .btn:hover{
+            color: #255784;
+            background-color: #2196f3;
+            border: #2196f3;
+            box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+            color: white;
+        }
+
+        input:hover{
+            border-bottom: 7px solid rgb(12, 221, 12);
+        }
+
+        input:hover::placeholder{
+            color: rgb(12, 221, 12);
+            font-size: 13px;
+        }
+
+        .checkAcc{
+            display: none;
+        }
+
+        label{
+
+            color: #fff;
+            font-size: 1rem;
+            justify-content: center;
+            display: flex;
+            margin: 15px;
+           
+            cursor: pointer;
+            transition: .5s ease-in-out;
+            
+
+        }
+        .login{
+            background-color: transparent;
+            
+        }
+
+        label:hover{
+            text-decoration: underline 1.5px;
+            letter-spacing: 2px;
+        }
+
+        #checkAcc:checked~#acno{
+            transform: translateX(-12px);
+        }
+        
+
+</style>
+<body>
+    <div class="main p-5">
+        
+        <div class="loginPanel">
+            
+                <div class="login" id="login">
+                    <h2>Login</h2>
+                    
+                    <input class="mb-2" type="text" placeholder="Username" id="uname">
+                    <input class="mt-2 mb-5" type="password" name="password" id="pword" placeholder="Password">
+                    <input class="btn mt-4" type="button" value="Sign Up" onclick="val()">
+
+                    
+                    <div class="alreadyUser">
+                        <input type="checkbox" class="checkAcc" name="accAlready" id="checkAcc">
+                        <label  id="signup" for="accAlready">SignUp</label>
+                    </div>
+                    
+                    
+                </div>
+                    
+                
+            
+        </div>
+        
+    </div>
+    
+</body>
+<script>
+    function val(){
+        user=document.getElementById('uname').value
+        
+        pass=document.getElementById('pword').value
+        
+
+        if(user=='' & pass==''){
+            alert("Enter your username and password")
+        }else if(user=='' & pass.length<5){
+            alert("Enter your username and a valid password")
+        }else if(user!='' & pass==''){
+            alert("Enter your password")
+        }else if(user=='' & pass!=''){
+            alert("Enter your username")
+        }else if(pass.length<5){
+            alert("Enter a valid password")
+        }else{
+            document.getElementById('uname').value=""
+            document.getElementById('pword').value=""
+            alert("Login Successful...")
+        }
+    }
+</script>
+</html>
