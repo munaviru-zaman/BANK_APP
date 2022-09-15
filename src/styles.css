@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+    background-blend-mode: color;
+        background-color: rgba(0, 0, 0, 0.512);
+        background-size: cover;
+        background-attachment: fixed;
+}
