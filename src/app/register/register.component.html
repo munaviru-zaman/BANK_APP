@@ -1,0 +1,25 @@
+<div class="main p-5">
+        
+    <div class="loginPanel">
+        
+            <div class="login" id="login">
+                <h2>Register</h2>
+                <input class="mb-3" type="text" (change)="getAccountno($event)" placeholder="Account Number" id="acno">
+                <input class="mb-2" type="text" (change)="getUserName($event)" placeholder="Username" id="uname">
+                <input class="mt-2 mb-4" type="password" (change)="getPassWord($event)" name="password" id="pword" placeholder="Password">
+                <input class="btn mt-4" type="button" (click)="signUp()" value="Sign Up">
+
+                
+                
+                    <input type="checkbox" class="checkAcc" name="accAlready" id="checkAcc"  onkeypress="loginpage()">
+                    <p>Already have an account?<a href="#">Login</a></p>
+            
+                
+                
+            </div>
+                
+            
+        
+    </div>
+    
+</div>

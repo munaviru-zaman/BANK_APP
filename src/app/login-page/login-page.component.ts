@@ -17,6 +17,7 @@ database:any={
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   accountno(event:any){
