@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataServicesService } from '../services/data-services.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class RegisterComponent implements OnInit {
 
   userStorageDB: any = ['this.accNo'];
 
-  constructor(private ds: DataServicesService) {}
+  constructor(private ds: DataServicesService, private router: Router) {}
 
   ngOnInit(): void {}
 
