@@ -35,5 +35,6 @@ export class RegisterComponent implements OnInit {
   signUp() {
     this.ds.signUp(this.accNo, this.uName, this.pWord);
     console.log(this.ds.database);
+    this.router.navigateByUrl('login-page');
   }
 }

@@ -1,108 +1,109 @@
-.main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+body {
+  background: #9854d4;
+  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
+  background: linear-gradient(to top, #562aad, #8742c4);
+}
+.main img {
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  opacity: 0.2;
+  width: 70vh;
+  height: auto;
+}
+.loginPanel {
+  width: 50vh;
+  min-width: 50vh;
+  min-height: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 30px;
+  box-shadow: 0px 20px 100px 5px rgba(0, 0, 0, 0.288);
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login h2 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  margin: 2rem 0;
+  color: white;
+  text-transform: uppercase;
 }
 
-.loginPanel{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    position: absolute;
-    height: 40vh;
-    /* background-color: aliceblue; */
-    width: 45vh;
-    border-radius: 30px;
-    box-shadow: 0px 20px 100px;
-    padding: 1.1rem;
-    text-align: center;
-    overflow: hidden;
+input {
+  outline: none;
+  border: none;
+  margin: 1rem 0;
+  padding: 0 1.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.514);
+  background: transparent;
+  color: white;
+  width: 70%;
+  min-width: 70%;
+  min-height: 2.3rem;
 }
-.btn{
-    margin-top: 4rem;
-}
-input{
-    outline: none;
-        border: none;
-        padding: 1.1rem;
-        border-bottom: 6px solid;
-        background: transparent;
-        color: white;
-        width: 35vh;
-        height: 2.3rem;
+input::placeholder {
+  color: rgba(255, 255, 255, 0.586);
+  font-size: 14px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 200;
 }
 
-::placeholder{
-        color: rgba(255, 255, 255, 0.586);
-        font-size: 15px;
-    }
+input:hover::placeholder {
+  color: white;
+}
 
-    h2{
-        color: rgb(255, 255, 255);
-        margin-bottom: 18px;
-    }
+input:focus::placeholder {
+  color: white;
+}
 
-    .btn{
-        
-        border: 2px solid #00ff0d;
-        outline: none;
-        color: #00ff0d;
-        font-size: 10px;
-        font-weight: lighter;
-        letter-spacing: 4px;
-        text-align: center;
-        padding: 5px 10px;
-    }
+.btn {
+  min-width: 70%;
+  min-height: 2.5rem;
+  margin: 2rem 0 0 0;
+  border: none;
+  background-color: #3700a5;
+  outline: none;
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 5px 10px;
+}
 
-    .btn:hover{
-        color: #00ff0d;
-        background-color: #00ff0d;
-        border: #00ff0d;
-        box-shadow: 0 0 10px #00ff0d, 0 0 40px #00ff0d, 0 0 80px #00ff0d;
-        color: white;
-    }
+.btn:hover {
+  color: white;
+  background-color: #3e00bb;
+  /* color: #00ff0d;
+  background-color: #00ff0d;
+  border: #00ff0d;
+  box-shadow: 0 0 10px #00ff0d, 0 0 40px #00ff0d, 0 0 80px #00ff0d; */
+}
 
-    input:hover{
-        border-bottom: 7px solid rgb(12, 221, 12);
-    }
-    input:focus{
-        border-bottom: 7px solid rgb(12, 221, 12);
-    }
-
-    input:hover::placeholder{
-        color: rgb(12, 221, 12);
-        font-size: 13px;
-    }
-    input:focus::placeholder{
-        color: rgb(12, 221, 12);
-        font-size: 13px;
-    }
-
-    .checkAcc{
-        display: none;
-    }
-
-    p{
-
-        color: #fff;
-        font-size: 1rem;
-        justify-content: center;
-        display: flex;
-        margin: 15px;
-       
-        cursor: pointer;
-        transition: .5s ease-in-out;
-        
-
-    }
-    .login{
-        background-color: transparent;
-        
-    }
-
-    label:hover{
-        text-decoration: underline 1.5px;
-        letter-spacing: 2px;
-    }
-
+p {
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  justify-content: center;
+  display: flex;
+  margin: 15px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+p a {
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+}
+p a:hover {
+  color: rgba(255, 255, 255, 0.795);
+}

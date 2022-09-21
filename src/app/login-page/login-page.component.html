@@ -1,28 +1,28 @@
+<body>
+  <div class="main">
+    <img src="../../assets/rupees-bank.png" alt="" />
+    <div class="loginPanel">
+      <div class="login" id="login">
+        <h2>Login</h2>
 
-
-
-    <div class="main p-5">
-        
-        <div class="loginPanel">
-                <div class="login" id="login">
-                    <h2>Login</h2>
-                    
-                    <input class="mb-2" type="text" (change)="accountno($event)" placeholder="Username" id="uname">
-                    <input class="mt-2 mb-5" type="password" (change)="passWord($event)" name="password" id="pword" placeholder="Password">
-                    <input class="btn mt-4" type="button" (click)="login()" value="Sign Up">
-
-                    
-                    <div class="alreadyUser">
-                        <input type="checkbox"  class="checkAcc" name="accAlready" id="checkAcc">
-                        <p>Not have an account<a href="#">Register</a></p>
-                    </div>
-                    
-                    
-                </div>
-                    
-                
-            
-        </div>
-        
+        <input
+          class=""
+          type="text"
+          (change)="accountno($event)"
+          placeholder="Account number"
+          id="uname"
+        />
+        <input
+          class=""
+          type="password"
+          (change)="passWord($event)"
+          name="password"
+          id="pword"
+          placeholder="Password"
+        />
+        <button class="btn" (click)="login()">Login</button>
+        <p>Not have an account<a href="/register">Sign Up</a></p>
+      </div>
     </div>
-    
+  </div>
+</body>

@@ -1,0 +1,122 @@
+.container {
+  width: 100%;
+  height: 100vh;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 8%;
+  margin: 2rem 0;
+  border-radius: 50px;
+  /* box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.1),
+    15px 15px 15px rgba(0, 0, 0, 0.1); */
+  /* background: #8e2de2;
+  background: -webkit-linear-gradient(to top, #4a00e0, #8e2de2);
+  background: linear-gradient(to top, #4a00e0, #8e2de2); */
+}
+.navbar .brand {
+  padding: 3px;
+}
+.navbar .brand img {
+  height: 40px;
+  /* filter: drop-shadow(-3px -3px 2px rgba(255, 255, 255, 0.2))
+    drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3))
+    drop-shadow(15px 15px 15px rgba(0, 0, 0, 0.3)); */
+}
+.navbar span {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 2rem;
+  background: linear-gradient(to top, #4a00e0, #8e2de2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: white; */
+  /* filter: drop-shadow(-3px -3px 2px rgba(255, 255, 255, 0.2))
+    drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3))
+    drop-shadow(15px 15px 15px rgba(0, 0, 0, 0.3)); */
+}
+.navbar button {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: #8e2de2;
+  background: -webkit-linear-gradient(to top, #4a00e0, #8e2de2);
+  background: linear-gradient(to top, #4a00e0, #8e2de2);
+  height: 3rem;
+  min-height: 3rem;
+  width: 20vh;
+  min-width: 20vh;
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  transition: background-color, 1s;
+}
+.navbar button:hover {
+  background: #9854d4;
+  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
+  background: linear-gradient(to top, #562aad, #8742c4);
+}
+.navbar button i {
+  font-weight: 800;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  /* background: #8e2de2;
+  background: -webkit-linear-gradient(to top, #4a00e0, #8e2de2);
+  background: linear-gradient(to top, #4a00e0, #8e2de2); */
+}
+.body .image {
+  height: 40vh;
+  width: 40vh;
+  background-image: url(../../assets/bank-card.png);
+  background-size: contain;
+}
+.body .head {
+  font-family: "Candal", sans-serif;
+  font-weight: bolder;
+  font-size: 3rem;
+  background: linear-gradient(to top, #4a00e0, #8e2de2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.body .tagline {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.699);
+}
+.body button {
+  margin: 3rem 0;
+  height: 3rem;
+  min-height: 3rem;
+  width: 15vh;
+  min-width: 15vh;
+  border: none;
+  outline: none;
+  background: #8e2de2;
+  background: -webkit-linear-gradient(to top, #4a00e0, #8e2de2);
+  background: linear-gradient(to top, #4a00e0, #8e2de2);
+  border-radius: 5px;
+}
+.body button:hover {
+  background: #9854d4;
+  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
+  background: linear-gradient(to top, #562aad, #8742c4);
+}
+.body button a {
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: white;
+}
