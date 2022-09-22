@@ -1,1 +1,85 @@
-<p>dashboard works!</p>
+<body>
+  <div class="main">
+    <div class="navSide">
+      <div class="profile">
+        <div class="profilePhoto">
+          <img src="" alt="" />
+        </div>
+        <div class="profile_name">
+          <span>{{ name }}</span>
+        </div>
+      </div>
+      <div class="nav_links">
+        <ul>
+          <li><a href="#" class="dashboard">Dashboard</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Account Settings</a></li>
+          <li><a href="#">App Settings</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="contents">
+      <div class="navbar">
+        <div class="search">
+          <input type="text" class="searchArea" placeholder="Search" />
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="nav-links">
+          <ul>
+            <li>Accounting</li>
+            <li>Activity</li>
+            <li>Teams</li>
+          </ul>
+        </div>
+        <div class="brand">
+          <img src="../../assets/rupees-bank.png" alt="" />
+          <span>MyMoney</span>
+        </div>
+      </div>
+      <div class="bank">
+        <div class="payCash">
+          <div class="heading">
+            <span>Bank Withdrawal</span>
+          </div>
+
+          <div class="accDetails">
+            <input type="text" value="{{ acno }}" id="accNo" />
+            <input type="text" value="{{ balance }}" id="balance" />
+          </div>
+          <div class="withdraw">
+            <input
+              type="text"
+              id="withdrawAmount"
+              placeholder="Enter Amount"
+              (change)="withdraw($event)"
+            />
+            <button id="withdraw" (click)="clickWithdraw()">Withdraw</button>
+          </div>
+        </div>
+        <div class="balance">
+          <div class="img"></div>
+          <input type="text" value="{{ balance }}" id="balance" />
+        </div>
+        <div class="payCash">
+          <div class="heading">
+            <span>Bank Deposit</span>
+          </div>
+
+          <div class="accDetails">
+            <input type="text" value="{{ acno }}" id="accNo" />
+            <input type="text" value="{{ balance }}" id="balance" />
+          </div>
+          <div class="withdraw">
+            <input
+              type="text"
+              id="depositAmount"
+              placeholder="Enter Amount"
+              (change)="deposit($event)"
+            />
+            <button id="deposit" (click)="clickDeposit()">Deposit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

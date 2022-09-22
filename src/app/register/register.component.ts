@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
   }
 
   signUp() {
-    this.ds.signUp(this.accNo, this.uName, this.pWord);
+    this.ds.signUp(this.accNo, this.uName, this.pWord, 8000);
     console.log(this.ds.database);
     this.router.navigateByUrl('login-page');
   }

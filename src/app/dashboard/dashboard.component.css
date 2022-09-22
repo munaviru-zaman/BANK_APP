@@ -1,0 +1,243 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
+.navSide {
+  margin: 0 2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  background: #9854d4;
+  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
+  background: linear-gradient(to top, #562aad, #8742c4);
+  width: 40vh;
+  box-shadow: 10px 0 50px 1px #8742c493;
+}
+.navSide .profile {
+  height: min-content;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navSide .profile .profilePhoto {
+  margin: 1rem 0;
+  background-color: #6631d1;
+  height: 15vh;
+  width: 15vh;
+  border-radius: 50%;
+}
+.navSide .profile span {
+  font-size: 20px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+.navSide .nav_links {
+  margin-top: 3rem;
+  margin-left: 2rem;
+  padding: 1rem 1rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+}
+
+.navSide .nav_links ul,
+a {
+  list-style-type: none;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.555);
+}
+
+.navSide .nav_links li,
+a {
+  margin: 1rem 0;
+}
+
+.navSide .nav_links ul a:hover {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+.navSide .nav_links .dashboard {
+  color: white;
+  font-weight: 700;
+}
+
+.main .contents {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* background-image: linear-gradient(to left, #6631d144, #6631d100); */
+}
+.contents .navbar {
+  margin: 1rem 2rem;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+}
+.contents .navbar .search {
+  background-color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  width: 20%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
+  border: #562aad44 solid 1px;
+}
+.navbar .search input {
+  outline: none;
+  border: none;
+  width: 88%;
+  background: transparent;
+}
+.navbar .search button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.navbar .search button i {
+  color: #562aad;
+}
+.navbar .nav-links ul {
+  list-style-type: none;
+  margin: 1rem 0;
+}
+.navbar .nav-links ul li {
+  display: inline-block;
+  margin: 0 1.3rem;
+  color: rgba(21, 0, 78, 0.637);
+}
+
+.navbar .nav-links ul li:hover {
+  color: rgba(21, 0, 78, 0.993);
+  cursor: pointer;
+}
+.navbar .brand img {
+  height: 40px;
+}
+.navbar span {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 2rem;
+}
+.contents .bank {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.contents .payCash {
+  height: min-content;
+  width: 40%;
+  margin: 1rem 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.089);
+}
+.payCash .heading {
+  background: #9854d4;
+  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
+  background: linear-gradient(to top, #562aad, #8742c4);
+  padding: 30px 20px;
+  margin: 0 0 3rem 0;
+}
+.payCash span {
+  font-size: 20px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: white;
+}
+
+.payCash .accDetails {
+  height: 3rem;
+  text-align: center;
+  background-color: #4a00dd15;
+  margin: 2rem 2rem;
+  border-radius: 5px;
+}
+
+.accDetails input {
+  outline: none;
+  border: none;
+  height: 100%;
+  background-color: transparent;
+}
+
+.accDetails #accNo {
+  width: 75%;
+  padding: 0 1rem;
+}
+.accDetails #balance {
+  width: 25%;
+}
+
+.payCash .withdraw {
+  height: 3rem;
+  text-align: center;
+  background-color: #4a00dd15;
+  margin: 3rem 2rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.withdraw input {
+  outline: none;
+  border: none;
+  height: 100%;
+  background-color: transparent;
+  width: 75%;
+  padding: 0 1rem;
+}
+.withdraw button {
+  width: 25%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background: #9854d4;
+  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
+  background: linear-gradient(to top, #562aad, #8742c4);
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+}
+.bank .balance {
+  height: min-content;
+  width: 50vh;
+  margin-left: 7rem;
+  border: 2px solid #562aad5b;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 1rem 1rem;
+}
+.balance .img {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 0;
+  background-image: url(../../assets/rupees-bank.png);
+  background-size: cover;
+}
+.balance #balance {
+  height: 5rem;
+  width: 80%;
+  color: #311170;
+  border: none;
+  outline: none;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  padding: 1rem;
+  font-size: 3rem;
+}
+
+.paycash .hystory {
+  height: 3rem;
+  text-align: center;
+  background-color: #4a00dd15;
+  margin: 2rem 2rem;
+  border-radius: 5px;
+}
