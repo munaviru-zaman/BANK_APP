@@ -126,11 +126,14 @@ a {
 .contents .bank {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  margin: 0 1rem;
+}
+.bank .cashPorts {
+  padding: 0 1rem;
 }
 .contents .payCash {
   height: min-content;
-  width: 40%;
+  width: 70vh;
   margin: 1rem 1rem;
   border-radius: 10px;
   overflow: hidden;
@@ -202,7 +205,7 @@ a {
   font-family: "Manrope", sans-serif;
   font-weight: 800;
 }
-.bank .balance {
+.balancePort .balance {
   height: min-content;
   width: 50vh;
   margin-left: 7rem;

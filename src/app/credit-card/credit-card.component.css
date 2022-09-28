@@ -1,0 +1,108 @@
+.main {
+  display: flex;
+}
+.credit {
+  height: min-content;
+  width: 40%;
+  margin: 1rem 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.089);
+}
+.credit .heading {
+  background: #9854d4;
+  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
+  background: linear-gradient(to top, #562aad, #8742c4);
+  padding: 30px 20px;
+  margin: 0 0 3rem 0;
+}
+.credit span {
+  font-size: 20px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: white;
+}
+
+.credit .accDetails {
+  text-align: center;
+  margin: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.accDetails input {
+  border-radius: 5px;
+  height: 3rem;
+  outline: none;
+  border: none;
+  background-color: #4a00dd15;
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.credit .apply {
+  height: 3rem;
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+.credit button {
+  width: 25%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: #9854d4;
+  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
+  background: linear-gradient(to top, #562aad, #8742c4);
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+}
+.credit2 {
+  height: min-content;
+  width: 40%;
+  margin: 1rem 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.089);
+}
+.credit2 .heading {
+  background: #9854d4;
+  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
+  background: linear-gradient(to top, #562aad, #8742c4);
+  padding: 30px 20px;
+  margin: 0 0 1rem 0;
+}
+.credit2 span {
+  font-size: 20px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: white;
+}
+.credit2 .creditHistory {
+  margin: 1rem 2rem;
+}
+.creditHistory table {
+  width: 100%;
+  font-family: "Manrope", sans-serif;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table .head {
+  background-color: #562aadab;
+  height: 3rem;
+  color: white;
+  font-weight: 800;
+}
+.head th {
+  padding: 0 1rem;
+}
+table .data {
+  height: 2rem;
+  background-color: #4a00dd15;
+  font-weight: 400;
+}
+.data td {
+  padding: 0 1rem;
+}

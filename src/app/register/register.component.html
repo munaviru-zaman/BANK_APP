@@ -2,33 +2,62 @@
   <div class="main">
     <img src="../../assets/rupees-bank.png" alt="" />
     <div class="loginPanel">
-      <div class="login" id="login">
-        <h2>sign up</h2>
-        <input
-          class=""
-          type="text"
-          (change)="getAccountno($event)"
-          placeholder="Account Number"
-          id="acno"
-        />
-        <input
-          class=""
-          type="text"
-          (change)="getUserName($event)"
-          placeholder="Username"
-          id="uname"
-        />
-        <input
-          class=""
-          type="password"
-          (change)="getPassWord($event)"
-          name="password"
-          id="pword"
-          placeholder="Password"
-        />
-        <button class="btn" (click)="signUp()">Sign Up</button>
-        <p>Already have an account?<a href="/login-page">Login</a></p>
-      </div>
+      <form [formGroup]="signUpForm">
+        <div class="login" id="login">
+          <h2>sign up</h2>
+          <input
+            class=""
+            type="text"
+            placeholder="Account Number"
+            formControlName="acno"
+            id="acno"
+          />
+          <div
+            style="color: rgb(0, 255, 13)"
+            *ngIf="
+              this.signUpForm.get('acno')?.errors &&
+              this.signUpForm.get('acno')?.touched
+            "
+          >
+            Invalid output
+          </div>
+          <input
+            class=""
+            type="text"
+            placeholder="Username"
+            formControlName="name"
+            id="uname"
+          />
+          <div
+            style="color: rgb(0, 255, 13)"
+            *ngIf="
+              this.signUpForm.get('name')?.errors &&
+              this.signUpForm.get('name')?.touched
+            "
+          >
+            Invalid output
+          </div>
+          <input
+            class=""
+            type="password"
+            name="password"
+            id="pword"
+            placeholder="Password"
+            formControlName="pWord"
+          />
+          <div
+            style="color: rgb(0, 255, 13)"
+            *ngIf="
+              this.signUpForm.get('pword')?.errors &&
+              this.signUpForm.get('pword')?.touched
+            "
+          >
+            Invalid output
+          </div>
+          <button class="btn" (click)="signUp()">Sign Up</button>
+          <p>Already have an account?<a href="/login-page">Login</a></p>
+        </div>
+      </form>
     </div>
   </div>
 </body>

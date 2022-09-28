@@ -2,27 +2,47 @@
   <div class="main">
     <img src="../../assets/rupees-bank.png" alt="" />
     <div class="loginPanel">
-      <div class="login" id="login">
-        <h2>Login</h2>
+      <form [formGroup]="loginForm">
+        <div class="login" id="login">
+          <h2>Login</h2>
 
-        <input
-          class=""
-          type="text"
-          (change)="accountno($event)"
-          placeholder="Account number"
-          id="uname"
-        />
-        <input
-          class=""
-          type="password"
-          (change)="passWord($event)"
-          name="password"
-          id="pword"
-          placeholder="Password"
-        />
-        <button class="btn" (click)="login()">Login</button>
-        <p>Not have an account<a href="/register">Sign Up</a></p>
-      </div>
+          <input
+            class=""
+            type="text"
+            formControlName="acno"
+            placeholder="Account number"
+            id="uname"
+          />
+          <div
+            style="color: rgb(0, 255, 13)"
+            *ngIf="
+              this.loginForm.get('acno')?.errors &&
+              this.loginForm.get('acno')?.touched
+            "
+          >
+            Invalid output
+          </div>
+          <input
+            class=""
+            type="password"
+            formControlName="pWord"
+            name="password"
+            id="pword"
+            placeholder="Password"
+          />
+          <div
+            style="color: rgb(0, 255, 13)"
+            *ngIf="
+              this.loginForm.get('pWord')?.errors &&
+              this.loginForm.get('pWord')?.touched
+            "
+          >
+            Invalid output
+          </div>
+          <button class="btn" (click)="login()">Login</button>
+          <p>Not have an account<a href="/register">Sign Up</a></p>
+        </div>
+      </form>
     </div>
   </div>
 </body>

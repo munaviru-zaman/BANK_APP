@@ -10,30 +10,40 @@ export class DataServicesService {
       name: 'munna',
       password: 'munna1234',
       balance: 12000,
+      PAN: '',
+      Aadhar: '',
     },
     200050008000: {
       acno: 200050008000,
       name: 'Rahul',
       password: 'rahul1234',
       balance: 10000,
+      PAN: '',
+      Aadhar: '',
     },
     200088888000: {
       acno: 200088888000,
       name: 'Shaheer',
       password: 'shaheer1234',
       balance: 15000,
+      PAN: '',
+      Aadhar: '',
     },
     200088889000: {
       acno: 200088889000,
       name: 'Shanid',
       password: 'shanid1234',
       balance: 15000,
+      PAN: '',
+      Aadhar: '',
     },
     200088779000: {
       acno: 200088779000,
       name: 'Dimal',
       password: 'dimal1234',
       balance: 15000,
+      PAN: '',
+      Aadhar: '',
     },
   };
   constructor() {}
@@ -47,6 +57,8 @@ export class DataServicesService {
         name: uname,
         password: pswd,
         balance: balance,
+        PAN: '',
+        Aadhar: '',
       };
       localStorage.setItem('user', JSON.stringify(this.database));
       console.log(this.database);

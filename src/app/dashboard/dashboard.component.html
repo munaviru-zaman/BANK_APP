@@ -11,7 +11,8 @@
       </div>
       <div class="nav_links">
         <ul>
-          <li><a href="#" class="dashboard">Dashboard</a></li>
+          <li><a href="" class="dashboard">Dashboard</a></li>
+          <li><a href="/credit-card">Credit Card</a></li>
           <li><a href="#">Messages</a></li>
           <li><a href="#">Account Settings</a></li>
           <li><a href="#">App Settings</a></li>
@@ -37,46 +38,79 @@
         </div>
       </div>
       <div class="bank">
-        <div class="payCash">
-          <div class="heading">
-            <span>Bank Withdrawal</span>
-          </div>
+        <form [formGroup]="dashboardForm">
+          <div class="cashPorts">
+            <div class="payCash">
+              <div class="heading">
+                <span>Bank Withdrawal</span>
+              </div>
 
-          <div class="accDetails">
-            <input type="text" value="{{ acno }}" id="accNo" />
-            <input type="text" value="{{ balance }}" id="balance" />
-          </div>
-          <div class="withdraw">
-            <input
-              type="text"
-              id="withdrawAmount"
-              placeholder="Enter Amount"
-              (change)="withdraw($event)"
-            />
-            <button id="withdraw" (click)="clickWithdraw()">Withdraw</button>
-          </div>
-        </div>
-        <div class="balance">
-          <div class="img"></div>
-          <input type="text" value="{{ balance }}" id="balance" />
-        </div>
-        <div class="payCash">
-          <div class="heading">
-            <span>Bank Deposit</span>
-          </div>
+              <div class="accDetails">
+                <input type="text" value="{{ acno }}" id="accNo" />
+                <input type="text" value="{{ balance }}" id="balance" />
+              </div>
 
-          <div class="accDetails">
-            <input type="text" value="{{ acno }}" id="accNo" />
-            <input type="text" value="{{ balance }}" id="balance" />
+              <div class="withdraw">
+                <input
+                  type="text"
+                  id="withdrawAmount"
+                  placeholder="Enter Amount"
+                  formControlName="drawMoney"
+                />
+
+                <button id="withdraw" (click)="clickWithdraw()">
+                  Withdraw
+                </button>
+              </div>
+
+              <div
+                style="color: green; font-size: small"
+                *ngIf="
+                  this.dashboardForm.get('drawMoney')?.errors &&
+                  this.dashboardForm.get('drawMoney')?.touched
+                "
+              >
+                invalid input
+              </div>
+            </div>
+
+            <div class="payCash">
+              <div class="heading">
+                <span>Bank Deposit</span>
+              </div>
+
+              <div class="accDetails">
+                <input type="text" value="{{ acno }}" id="accNo" />
+                <input type="text" value="{{ balance }}" id="balance" />
+              </div>
+
+              <div class="withdraw">
+                <input
+                  type="text"
+                  id="depositAmount"
+                  placeholder="Enter Amount"
+                  formControlName="depositMoney"
+                />
+
+                <button id="deposit" (click)="clickDeposit()">Deposit</button>
+              </div>
+              <div
+                style="color: green; font-size: small"
+                *ngIf="
+                  this.dashboardForm.get('depositMoney')?.errors &&
+                  this.dashboardForm.get('depositMoney')?.touched
+                "
+              >
+                invalid input
+              </div>
+            </div>
           </div>
-          <div class="withdraw">
-            <input
-              type="text"
-              id="depositAmount"
-              placeholder="Enter Amount"
-              (change)="deposit($event)"
-            />
-            <button id="deposit" (click)="clickDeposit()">Deposit</button>
+        </form>
+
+        <div class="balancePort">
+          <div class="balance">
+            <div class="img"></div>
+            <input type="text" value="{{ balance }}" id="balance" />
           </div>
         </div>
       </div>

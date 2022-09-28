@@ -7,6 +7,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterComponent } from './register/register.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreditCardComponent } from './credit-card/credit-card.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginPageComponent,
     RegisterComponent,
     LandingPageComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreditCardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

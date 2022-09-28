@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataServicesService } from '../services/data-services.service';
 
@@ -8,33 +9,36 @@ import { DataServicesService } from '../services/data-services.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  accNo: number = 0;
-  uName: any = '';
-  pWord: any = '';
+  // accNo: number = 0;
+  // uName: any = '';
+  // pWord: any = '';
 
   userStorageDB: any = ['this.accNo'];
 
-  constructor(private ds: DataServicesService, private router: Router) {}
+  signUpForm = this.fb.group({
+    name: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
+    acno: ['', [Validators.required, Validators.pattern('[0-9]*')]],
+    pWord: ['', [Validators.required, Validators.minLength(5)]],
+  });
+
+  constructor(
+    private ds: DataServicesService,
+    private router: Router,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {}
 
-  getAccountno(event: any) {
-    this.accNo = event.target.value;
-    console.log(this.accNo);
-  }
-
-  getUserName(event: any) {
-    this.uName = event.target.value;
-    console.log(this.uName);
-  }
-  getPassWord(event: any) {
-    this.pWord = event.target.value;
-    console.log(this.pWord);
-  }
-
   signUp() {
-    this.ds.signUp(this.accNo, this.uName, this.pWord, 8000);
-    console.log(this.ds.database);
-    this.router.navigateByUrl('login-page');
+    if (this.signUpForm.valid) {
+      var acno: any = this.signUpForm.value.acno;
+      var name: any = this.signUpForm.value.name;
+      var pword: any = this.signUpForm.value.pWord;
+      this.ds.signUp(acno, name, pword, 8000);
+      console.log(this.ds.database);
+      this.router.navigateByUrl('login-page');
+    } else {
+      alert('error');
+    }
   }
 }

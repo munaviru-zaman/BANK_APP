@@ -1,0 +1,99 @@
+<div class="main">
+  <div class="credit">
+    <div class="heading">
+      <span>Credit Card</span>
+    </div>
+    <form [formGroup]="creditForm">
+      <div class="accDetails">
+        <input
+          type="text"
+          value=""
+          formControlName="ACNO"
+          id="accNo"
+          placeholder="Account Number"
+        />
+        <div
+          style="color: rgb(0, 255, 13)"
+          *ngIf="
+            this.creditForm.get('ACNO')?.errors &&
+            this.creditForm.get('ACNO')?.touched
+          "
+        >
+          Invalid output
+        </div>
+        <input
+          type="text"
+          formControlName="NAME"
+          id="name"
+          placeholder="Name"
+        />
+        <div
+          style="color: rgb(0, 255, 13)"
+          *ngIf="
+            this.creditForm.get('NAME')?.errors &&
+            this.creditForm.get('NAME')?.touched
+          "
+        >
+          Invalid output
+        </div>
+        <input
+          type="text"
+          placeholder="PAN Number"
+          formControlName="PAN"
+          id="pan"
+        />
+        <div
+          style="color: rgb(0, 255, 13)"
+          *ngIf="
+            this.creditForm.get('PAN')?.errors &&
+            this.creditForm.get('PAN')?.touched
+          "
+        >
+          Invalid output
+        </div>
+        <input
+          type="text"
+          placeholder="Aadhar Number"
+          formControlName="AADHAR"
+          id="aadhar"
+        />
+        <div
+          style="color: rgb(0, 255, 13)"
+          *ngIf="
+            this.creditForm.get('AADHAR')?.errors &&
+            this.creditForm.get('AADHAR')?.touched
+          "
+        >
+          Invalid output
+        </div>
+      </div>
+      <div class="apply">
+        <button id="credit" (click)="apply()">Apply</button>
+      </div>
+    </form>
+  </div>
+  <div class="credit2">
+    <div class="heading">
+      <span>Credit History</span>
+    </div>
+
+    <div class="creditHistory">
+      <table>
+        <thead>
+          <tr class="head">
+            <th>Account Number</th>
+            <th>Name</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="data" *ngFor="let data of dummyarray">
+            <td>{{ data.accountNumber }}</td>
+            <td>{{ data.name }}</td>
+            <td>{{ data.balance }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
