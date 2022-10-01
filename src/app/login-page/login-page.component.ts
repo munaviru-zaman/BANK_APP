@@ -9,6 +9,9 @@ import { DataServicesService } from '../services/data-services.service';
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent implements OnInit {
+  currentUser: any;
+  curentUserName: any;
+
   loginForm = this.fb.group({
     acno: ['', [Validators.required, Validators.pattern('[0-9]*')]],
     pWord: ['', [Validators.required, Validators.minLength(5)]],
@@ -26,7 +29,11 @@ export class LoginPageComponent implements OnInit {
     var pswd: any = this.loginForm.value.pWord;
     if (acno in this.db.database) {
       if (pswd == this.db.database[acno]['password']) {
-        localStorage.setItem('acno', JSON.stringify(acno) || '[]');
+        localStorage.setItem('username', this.db.database[acno]['name']);
+        this.currentUser = localStorage.setItem(
+          'acno',
+          JSON.stringify(acno) || '[]'
+        );
         alert('LOGIN SUCCESSFULLY');
         this.router.navigateByUrl('dashboard');
       } else {

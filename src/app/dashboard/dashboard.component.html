@@ -18,6 +18,19 @@
           <li><a href="#">App Settings</a></li>
         </ul>
       </div>
+
+      <div class="timeLogout">
+        <span style="color: white">{{ time | date: "short" }}</span>
+        <button (click)="logout()">Log Out</button>
+      </div>
+      <div class="del_acc">
+        <button (click)="deletacc()" appDirectives>Delete Account</button>
+        <app-deleteaccount
+          [item]="delacc"
+          (onCancel)="cancel()"
+          (onDelete)="delete($event)"
+        ></app-deleteaccount>
+      </div>
     </div>
     <div class="contents">
       <div class="navbar">
@@ -37,7 +50,7 @@
           <span>MyMoney</span>
         </div>
       </div>
-      <div class="bank">
+      <div class="bank" [ngClass]="delacc ? 'style' : ''">
         <form [formGroup]="dashboardForm">
           <div class="cashPorts">
             <div class="payCash">

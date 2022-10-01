@@ -48,6 +48,10 @@ export class DataServicesService {
   };
   constructor() {}
 
+  storeDatabase() {
+    localStorage.setItem('database', JSON.stringify(this.database));
+  }
+
   signUp(acno: any, uname: any, pswd: any, balance: number) {
     if (acno in this.database) {
       alert('User already exist');
@@ -60,7 +64,8 @@ export class DataServicesService {
         PAN: '',
         Aadhar: '',
       };
-      localStorage.setItem('user', JSON.stringify(this.database));
+      // localStorage.setItem('user', JSON.stringify(this.database));
+      this.storeDatabase;
       console.log(this.database);
     }
   }

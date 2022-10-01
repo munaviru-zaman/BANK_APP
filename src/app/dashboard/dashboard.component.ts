@@ -12,6 +12,8 @@ export class DashboardComponent implements OnInit {
   balance: number = 0;
   name: any = '';
   acno: any = localStorage.getItem('acno');
+  time: any;
+  delacc: any;
 
   dashboardForm = this.fb.group({
     drawMoney: [
@@ -37,13 +39,25 @@ export class DashboardComponent implements OnInit {
     private db: DataServicesService,
     private router: Router,
     private fb: FormBuilder
-  ) {}
+  ) {
+    this.time = new Date();
+  }
 
   ngOnInit(): void {
     var acno = JSON.parse(localStorage.getItem('acno') || '[]');
     this.balance = this.db.database[acno]['balance'];
     this.name = this.db.database[acno]['name'];
     this.acno = this.db.database[acno]['acno'];
+
+    if (!localStorage.getItem('username')) {
+      alert('Please login again');
+      this.router.navigateByUrl('login-page');
+    }
+  }
+
+  logout() {
+    localStorage.removeItem('username');
+    this.router.navigateByUrl('login-page');
   }
 
   clickWithdraw() {
@@ -60,5 +74,17 @@ export class DashboardComponent implements OnInit {
     this.balance =
       Number(this.db.database[acno]['balance']) + Number(withdrawmoney);
     this.db.database[acno]['balance'] = this.balance;
+  }
+
+  deletacc() {
+    this.delacc = JSON.parse(localStorage.getItem('acno') || '');
+  }
+
+  cancel() {
+    this.delacc = '';
+  }
+
+  delete(event: any) {
+    alert('acount deleted');
   }
 }

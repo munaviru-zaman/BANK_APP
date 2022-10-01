@@ -244,3 +244,9 @@ a {
   margin: 2rem 2rem;
   border-radius: 5px;
 }
+
+/* making div disappear */
+
+.style {
+  opacity: 0;
+}
