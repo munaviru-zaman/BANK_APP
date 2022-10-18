@@ -5,13 +5,12 @@
   width: 100%;
 }
 .navSide {
-  margin: 0 2rem 0 0;
   display: flex;
   flex-direction: column;
   background: #9854d4;
   background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
   background: linear-gradient(to top, #562aad, #8742c4);
-  width: 40vh;
+  width: 20vw;
   box-shadow: 10px 0 50px 1px #8742c493;
 }
 .navSide .profile {
@@ -65,22 +64,22 @@ a {
 }
 
 .main .contents {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  /* background-image: linear-gradient(to left, #6631d144, #6631d100); */
+  width: 100vw;
 }
+
 .contents .navbar {
-  margin: 1rem 2rem;
-  padding: 1rem 1rem;
+  height: 10vh;
+  padding: 0 1rem;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   font-family: "Manrope", sans-serif;
   font-weight: 800;
 }
-.contents .navbar .search {
+.navbar .search {
   background-color: rgb(255, 255, 255);
   padding: 5px 10px;
   width: 20%;
@@ -88,18 +87,18 @@ a {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
   border: #562aad44 solid 1px;
 }
-.navbar .search input {
+.search input {
   outline: none;
   border: none;
   width: 88%;
   background: transparent;
 }
-.navbar .search button {
+.search button {
   outline: none;
   border: none;
   background-color: transparent;
 }
-.navbar .search button i {
+.search button i {
   color: #562aad;
 }
 .navbar .nav-links ul {
@@ -124,12 +123,39 @@ a {
   font-size: 2rem;
 }
 .contents .bank {
+  height: calc(100vh - 10vh);
+  display: flex;
+}
+.bank .child1,
+.child2 {
+  width: 50%;
+  height: 100%;
+}
+.child1 {
+  padding: 1rem;
+}
+.child2 {
+  padding: 1rem;
+}
+.port {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.contents .bank {
   display: flex;
   flex-direction: row;
-  margin: 0 1rem;
+  justify-content: left;
+  height: 90%;
+  float: left;
 }
 .bank .cashPorts {
   padding: 0 1rem;
+  height: 100%;
+  width: 50vw;
 }
 .contents .payCash {
   height: min-content;
@@ -205,10 +231,14 @@ a {
   font-family: "Manrope", sans-serif;
   font-weight: 800;
 }
+
+.bank .balancePort {
+  text-align: center;
+  padding: 1rem 1rem;
+}
 .balancePort .balance {
   height: min-content;
   width: 50vh;
-  margin-left: 7rem;
   border: 2px solid #562aad5b;
   border-radius: 2rem;
   display: flex;

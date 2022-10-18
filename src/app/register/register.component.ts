@@ -16,13 +16,13 @@ export class RegisterComponent implements OnInit {
   userStorageDB: any = ['this.accNo'];
 
   signUpForm = this.fb.group({
-    name: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
+    name: ['', [Validators.required, Validators.pattern('[ a-zA-Z]*')]],
     acno: ['', [Validators.required, Validators.pattern('[0-9]*')]],
-    pWord: ['', [Validators.required, Validators.minLength(5)]],
+    pswd: ['', [Validators.required, Validators.minLength(5)]],
   });
 
   constructor(
-    private ds: DataServicesService,
+    private service: DataServicesService,
     private router: Router,
     private fb: FormBuilder
   ) {}
@@ -30,15 +30,21 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   signUp() {
+    var acno: any = this.signUpForm.value.acno;
+    var name: any = this.signUpForm.value.name;
+    var pswd: any = this.signUpForm.value.pswd;
     if (this.signUpForm.valid) {
-      var acno: any = this.signUpForm.value.acno;
-      var name: any = this.signUpForm.value.name;
-      var pword: any = this.signUpForm.value.pWord;
-      this.ds.signUp(acno, name, pword, 8000);
-      console.log(this.ds.database);
-      this.router.navigateByUrl('login-page');
-    } else {
-      alert('error');
+      this.service.signUp(acno, name, pswd, 0).subscribe(
+        (result: any) => {
+          if (result) {
+            alert(result.message);
+            this.router.navigateByUrl('login-page');
+          }
+        },
+        (result) => {
+          alert(result.error.message);
+        }
+      );
     }
   }
 }

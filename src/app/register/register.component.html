@@ -26,7 +26,7 @@
             type="text"
             placeholder="Username"
             formControlName="name"
-            id="uname"
+            id="name"
           />
           <div
             style="color: rgb(0, 255, 13)"
@@ -43,13 +43,13 @@
             name="password"
             id="pword"
             placeholder="Password"
-            formControlName="pWord"
+            formControlName="pswd"
           />
           <div
             style="color: rgb(0, 255, 13)"
             *ngIf="
-              this.signUpForm.get('pword')?.errors &&
-              this.signUpForm.get('pword')?.touched
+              this.signUpForm.get('pswd')?.errors &&
+              this.signUpForm.get('pswd')?.touched
             "
           >
             Invalid output

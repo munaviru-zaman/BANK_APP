@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -46,27 +48,27 @@ export class DataServicesService {
       Aadhar: '',
     },
   };
-  constructor() {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   storeDatabase() {
     localStorage.setItem('database', JSON.stringify(this.database));
   }
 
-  signUp(acno: any, uname: any, pswd: any, balance: number) {
-    if (acno in this.database) {
-      alert('User already exist');
-    } else {
-      this.database[acno] = {
-        acno: acno,
-        name: uname,
-        password: pswd,
-        balance: balance,
-        PAN: '',
-        Aadhar: '',
-      };
-      // localStorage.setItem('user', JSON.stringify(this.database));
-      this.storeDatabase;
-      console.log(this.database);
-    }
+  signUp(acno: any, name: any, pswd: any, balance: number) {
+    const user = {
+      acno,
+      name,
+      pswd,
+      balance,
+    };
+    return this.http.post('http://localhost:3004/signup', user);
+  }
+
+  login(acno: any, pswd: any) {
+    const loginUser = {
+      acno,
+      pswd,
+    };
+    return this.http.post('http://localhost:3004/login', loginUser);
   }
 }

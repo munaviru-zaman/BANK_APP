@@ -9,13 +9,16 @@ import { DataServicesService } from '../services/data-services.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  balance: number = 0;
-  name: any = '';
-  acno: any = localStorage.getItem('acno');
+  balance: any;
+  name: any;
+  acno: any;
   time: any;
   delacc: any;
+  // withdrawForm: any;
+  database: any;
+  // depositForm: any;
 
-  dashboardForm = this.fb.group({
+  withdrawForm = this.fb.group({
     drawMoney: [
       '',
       [
@@ -25,6 +28,9 @@ export class DashboardComponent implements OnInit {
         Validators.maxLength(5),
       ],
     ],
+  });
+
+  depositForm = this.fb.group({
     depositMoney: [
       '',
       [
@@ -35,6 +41,7 @@ export class DashboardComponent implements OnInit {
       ],
     ],
   });
+
   constructor(
     private db: DataServicesService,
     private router: Router,
@@ -44,36 +51,56 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    var acno = JSON.parse(localStorage.getItem('acno') || '[]');
-    this.balance = this.db.database[acno]['balance'];
-    this.name = this.db.database[acno]['name'];
-    this.acno = this.db.database[acno]['acno'];
+    this.acno = localStorage.getItem('acno');
+    this.balance = localStorage.getItem('balance');
+    this.name = localStorage.getItem('name');
 
-    if (!localStorage.getItem('username')) {
-      alert('Please login again');
-      this.router.navigateByUrl('login-page');
+    // if (!localStorage.getItem('acno')) {
+    //   alert('Please login again');
+    //   this.router.navigateByUrl('login-page');
+    // }
+  }
+
+  clickWithdraw() {
+    if (this.withdrawForm.valid) {
+      var drawmoney: any = this.withdrawForm.value.drawMoney;
+
+      if (this.balance == 0) {
+        alert('Sorry, You are BROKE...');
+      } else if (drawmoney > Number(this.balance)) {
+        alert('YOU DONT HAVE ENOUGH MONEY');
+      } else {
+        this.balance = this.database[this.acno]['balance'] - drawmoney;
+        this.database[this.acno]['balance'] = this.balance;
+        localStorage.setItem('balance', this.balance);
+        this.balance = localStorage.getItem('balance');
+      }
+    } else {
+      alert('Something Went Wrong');
+    }
+  }
+
+  clickDeposit() {
+    if (this.depositForm.valid) {
+      var depositmoney: any = this.depositForm.value.depositMoney;
+      const money = 100000 - this.balance;
+      if (depositmoney > money) {
+        alert('Sorry, Make your Wallet BIG...');
+      } else {
+        this.balance =
+          Number(this.database[this.acno]['balance']) + Number(depositmoney);
+        this.database[this.acno]['balance'] = this.balance;
+
+        localStorage.setItem('balance', this.balance);
+      }
+    } else {
+      alert('Something Went Wrong');
     }
   }
 
   logout() {
-    localStorage.removeItem('username');
+    localStorage.removeItem('acno');
     this.router.navigateByUrl('login-page');
-  }
-
-  clickWithdraw() {
-    var acno = JSON.parse(localStorage.getItem('acno') || '[]');
-    var drawmoney: any = this.dashboardForm.value.drawMoney;
-    this.balance = this.db.database[acno]['balance'] - drawmoney;
-    this.db.database[acno]['balance'] = this.balance;
-  }
-  clickDeposit() {
-    var acno = JSON.parse(localStorage.getItem('acno') || '[]');
-
-    var withdrawmoney: any = this.dashboardForm.value.depositMoney;
-
-    this.balance =
-      Number(this.db.database[acno]['balance']) + Number(withdrawmoney);
-    this.db.database[acno]['balance'] = this.balance;
   }
 
   deletacc() {
