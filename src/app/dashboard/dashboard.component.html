@@ -9,43 +9,29 @@
           <span>{{ name }}</span>
         </div>
       </div>
+
       <div class="nav_links">
         <ul>
           <li>
-            <a
-              routerLink="transaction"
-              routerLinkActive="active"
-              class="dashboard"
-              >Dashboard</a
-            >
+            <a href="dashboard">Dashboard</a>
           </li>
           <li>
             <a href="credit-card">Credit Card</a>
           </li>
           <li><a href="#">Messages</a></li>
-          <li><a href="#">Account Settings</a></li>
-          <li><a href="#">App Settings</a></li>
+          <li><a href="#">Settings</a></li>
         </ul>
       </div>
 
-      <div class="timeLogout">
-        <span style="color: white">{{ time | date: "short" }}</span>
+      <div class="logout">
         <button (click)="logout()">Log Out</button>
-      </div>
-      <div class="del_acc">
-        <button (click)="deletacc()" appDirectives>Delete Account</button>
-        <app-deleteaccount
-          [item]="delacc"
-          (onCancel)="cancel()"
-          (onDelete)="delete($event)"
-        ></app-deleteaccount>
       </div>
     </div>
     <div class="contents">
       <div class="navbar">
         <div class="search">
           <input type="text" class="searchArea" placeholder="Search" />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <div class="nav-links">
           <ul>
@@ -54,102 +40,189 @@
             <li>Teams</li>
           </ul>
         </div>
-        <div class="brand">
+        <span class="time" style="color: rgb(0, 0, 0)">{{
+          time | date: "short"
+        }}</span>
+        <!-- <div class="brand">
           <img src="../../assets/rupees-bank.png" alt="" />
           <span>MyMoney</span>
+        </div> -->
+        <div class="deletebtn">
+          <button class="delete" appDirectives>Delete Account</button>
         </div>
       </div>
-      <div class="bank" [ngClass]="delacc ? 'style' : ''">
-        <div class="child1">
-          <div class="port">
-            <div class="cashPorts">
-              <form [formGroup]="withdrawForm">
-                <div class="payCash">
-                  <div class="heading">
-                    <span>Bank Withdrawal</span>
-                  </div>
-
-                  <div class="accDetails">
-                    <input type="text" value="{{ acno }}" id="accNo" readonly />
-                    <input
-                      type="text"
-                      value="{{ balance }}"
-                      id="balance"
-                      readonly
-                    />
-                  </div>
-
-                  <div class="withdraw">
-                    <input
-                      type="text"
-                      id="withdrawAmount"
-                      placeholder="Enter Amount"
-                      formControlName="drawMoney"
-                    />
-
-                    <button id="withdraw" (click)="clickWithdraw()">
-                      Withdraw
-                    </button>
-                  </div>
-
-                  <div
-                    style="color: green; font-size: small"
-                    *ngIf="
-                      this.withdrawForm.get('drawMoney')?.errors &&
-                      this.withdrawForm.get('drawMoney')?.touched
-                    "
-                  >
-                    invalid input
-                  </div>
+      <div class="body">
+        <app-deleteaccount
+          [item]="delacc"
+          (onCancel)="cancel()"
+          (onDelete)="delete($event)"
+        ></app-deleteaccount>
+        <div class="flex-body">
+          <form [formGroup]="depositForm">
+            <div class="deposit-box">
+              <div class="header">
+                <span>Deposit</span>
+              </div>
+              <div class="acno">
+                <input
+                  type="text"
+                  placeholder="Account Number"
+                  formControlName="depositAcno"
+                />
+                <br />
+                <div
+                  class="acnoValid"
+                  *ngIf="
+                    this.depositForm.get('depositAcno')?.errors &&
+                    this.depositForm.get('depositAcno')?.touched
+                  "
+                >
+                  Required. Must be a number with atleast 5 didgit
                 </div>
-              </form>
-              <form [formGroup]="depositForm">
-                <div class="payCash">
-                  <div class="heading">
-                    <span>Bank Deposit</span>
-                  </div>
-
-                  <div class="accDetails">
-                    <input type="text" value="{{ acno }}" id="accNo" readonly />
-                    <input
-                      type="text"
-                      value="{{ balance }}"
-                      id="balance"
-                      readonly
-                    />
-                  </div>
-
-                  <div class="withdraw">
-                    <input
-                      type="text"
-                      id="depositAmount"
-                      placeholder="Enter Amount"
-                      formControlName="depositMoney"
-                    />
-
-                    <button id="deposit" (click)="clickDeposit()">
-                      Deposit
-                    </button>
-                  </div>
-                  <div
-                    style="color: green; font-size: small"
-                    *ngIf="
-                      this.depositForm.get('depositMoney')?.errors &&
-                      this.depositForm.get('depositMoney')?.touched
-                    "
-                  >
-                    invalid input
-                  </div>
+              </div>
+              <div class="pswd">
+                <input
+                  type="text"
+                  placeholder="Password"
+                  formControlName="depositPswd"
+                /><br />
+                <div
+                  class="pswdValid"
+                  *ngIf="
+                    this.depositForm.get('depositPswd')?.errors &&
+                    this.depositForm.get('depositPswd')?.touched
+                  "
+                >
+                  Required. Must be 5 characters
                 </div>
-              </form>
+              </div>
+              <div class="amnt">
+                <input
+                  type="text"
+                  placeholder="Amount"
+                  formControlName="depositamnt"
+                /><br />
+                <div
+                  class="amntValid"
+                  *ngIf="
+                    this.depositForm.get('depositamnt')?.errors &&
+                    this.depositForm.get('depositamnt')?.touched
+                  "
+                >
+                  Requires. Must be a number with upto 5 didgit
+                </div>
+              </div>
+              <div class="button">
+                <input
+                  type="button"
+                  value="Deposit"
+                  class="btn"
+                  (click)="deposit()"
+                />
+              </div>
             </div>
-          </div>
+          </form>
+          <form [formGroup]="withdrawForm">
+            <div class="withdraw-box">
+              <div class="header">
+                <span>Withdaw</span>
+              </div>
+              <div class="acno">
+                <input
+                  type="text"
+                  placeholder="Account Number"
+                  formControlName="withdrawAcno"
+                /><br />
+                <div
+                  class="acnoValid"
+                  *ngIf="
+                    this.withdrawForm.get('withdrawAcno')?.errors &&
+                    this.withdrawForm.get('withdrawAcno')?.touched
+                  "
+                >
+                  Required. Must be a number with atleast 5 didgit
+                </div>
+              </div>
+              <div class="pswd">
+                <input
+                  type="text"
+                  placeholder="Password"
+                  formControlName="withdrawPswd"
+                /><br />
+                <div
+                  class="pswdValid"
+                  *ngIf="
+                    this.withdrawForm.get('withdrawPswd')?.errors &&
+                    this.withdrawForm.get('withdrawPswd')?.touched
+                  "
+                >
+                  Required. Must be 5 characters
+                </div>
+              </div>
+              <div class="amnt">
+                <input
+                  type="text"
+                  placeholder="Amount"
+                  formControlName="withdrawamnt"
+                /><br />
+                <div
+                  class="amntValid"
+                  *ngIf="
+                    this.withdrawForm.get('withdrawamnt')?.errors &&
+                    this.withdrawForm.get('withdrawamnt')?.touched
+                  "
+                >
+                  Required. Must be a number with upto didgit
+                </div>
+              </div>
+              <div class="button">
+                <input
+                  type="button"
+                  value="Withdraw"
+                  class="btn"
+                  (click)="withdraw()"
+                />
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="child2">
-          <div class="balancePort">
-            <div class="balance">
-              <div class="img"></div>
-              <input type="text" value="{{ balance }}" id="balance" readonly />
+
+        <div class="grid-body" [ngClass]="delacc ? 'style' : ''">
+          <div class="balance-box">
+            <span>Your Balance</span>
+            <h2>₹12345</h2>
+          </div>
+          <div class="savings-box">
+            <span>Savings</span>
+            <h2>₹3405</h2>
+          </div>
+          <div class="percent-box">
+            <span>Expense</span>
+            <h2>₹870</h2>
+          </div>
+          <div class="rout-box">
+            <div class="rout-header">
+              <span>Transaction History</span>
+            </div>
+            <div class="history-table">
+              <table>
+                <thead>
+                  <tr class="head">
+                    <th>Account Number</th>
+                    <th>Transaction</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="data" *ngFor="let data of transArray">
+                    <td>{{ acno }}</td>
+                    <td>{{ data.trans }}</td>
+                    <td>
+                      {{ data.amount }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

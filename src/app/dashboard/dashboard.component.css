@@ -3,15 +3,22 @@
   flex-direction: row;
   height: 100vh;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.027);
 }
 .navSide {
+  background-color: white;
+  margin: 1rem 0 1rem 2rem;
   display: flex;
   flex-direction: column;
-  background: #9854d4;
-  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
-  background: linear-gradient(to top, #562aad, #8742c4);
+  /* background: #8800ff;
+  background: -webkit-linear-gradient(to top, #3a1584, #66398c);
+  background: linear-gradient(to top, #1b0051, #2d0087); */
+  border-radius: 60px;
   width: 20vw;
-  box-shadow: 10px 0 50px 1px #8742c493;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.103);
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
 }
 .navSide .profile {
   height: min-content;
@@ -19,55 +26,84 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* background-color: #562aad; */
 }
 .navSide .profile .profilePhoto {
   margin: 1rem 0;
-  background-color: #6631d1;
   height: 15vh;
   width: 15vh;
   border-radius: 50%;
+  background-image: url("../../assets/user-profile.png");
+  background-size: cover;
 }
 .navSide .profile span {
-  font-size: 20px;
-  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
+  /* letter-spacing: 2px;
+  word-spacing: 5px; */
+  /* text-transform: uppercase; */
+  font-family: "Poppins", sans-serif;
+  /* font-family: "Manrope", sans-serif; */
   font-weight: 700;
-  color: white;
+  color: #11006754;
 }
 
 .navSide .nav_links {
-  margin-top: 3rem;
-  margin-left: 2rem;
-  padding: 1rem 1rem;
+  margin: 1rem 0;
+  word-spacing: 2px;
+  /* margin: 1rem 1rem; */
+  /* text-align: center; */
   font-family: "Manrope", sans-serif;
   font-weight: 600;
+  font-size: 15px;
+
+  /* background-color: #562aad; */
 }
 
-.navSide .nav_links ul,
-a {
+.nav_links li {
   list-style-type: none;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.555);
+  text-align: left;
+  margin: 2rem 0;
 }
-
-.navSide .nav_links li,
-a {
-  margin: 1rem 0;
+.nav_links a {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.343);
+  position: relative;
+  left: -12px;
+  text-decoration: none;
 }
 
 .navSide .nav_links ul a:hover {
-  color: rgb(255, 255, 255);
-  font-weight: 700;
+  color: #110067;
 }
-.navSide .nav_links .dashboard {
-  color: white;
-  font-weight: 700;
+.navSide .nav_links ul a:focus {
+  color: #110067;
+}
+
+.navSide .logout {
+  margin: 3rem;
+  bottom: 0;
+  position: absolute;
+}
+.logout button {
+  background: transparent;
+  outline: none;
+  border: none;
+  /* font-family: "Manrope", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.343);
+}
+.logout button:hover {
+  color: #110067;
 }
 
 .main .contents {
-  height: 100vh;
+  /* overflow: hidden; */
+  margin: 1rem 1rem;
   display: flex;
   flex-direction: column;
   width: 100vw;
+  /* background-color: #31117032; */
 }
 
 .contents .navbar {
@@ -75,6 +111,7 @@ a {
   padding: 0 1rem;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
   font-family: "Manrope", sans-serif;
   font-weight: 800;
@@ -82,8 +119,7 @@ a {
 .navbar .search {
   background-color: rgb(255, 255, 255);
   padding: 5px 10px;
-  width: 20%;
-  border-radius: 5px;
+  border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
   border: #562aad44 solid 1px;
 }
@@ -93,12 +129,11 @@ a {
   width: 88%;
   background: transparent;
 }
-.search button {
-  outline: none;
-  border: none;
-  background-color: transparent;
+.search input::placeholder {
+  color: rgba(0, 0, 0, 0.943);
+  font-size: 15px;
 }
-.search button i {
+.search i {
   color: #562aad;
 }
 .navbar .nav-links ul {
@@ -106,6 +141,8 @@ a {
   margin: 1rem 0;
 }
 .navbar .nav-links ul li {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   display: inline-block;
   margin: 0 1.3rem;
   color: rgba(21, 0, 78, 0.637);
@@ -115,164 +152,362 @@ a {
   color: rgba(21, 0, 78, 0.993);
   cursor: pointer;
 }
-.navbar .brand img {
-  height: 40px;
+.navbar .nav-links ul li:focus {
+  color: rgba(21, 0, 78, 0.993);
 }
+
 .navbar span {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 2rem;
+  /* font-family: "Plus Jakarta Sans", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
 }
-.contents .bank {
-  height: calc(100vh - 10vh);
-  display: flex;
-}
-.bank .child1,
-.child2 {
-  width: 50%;
-  height: 100%;
-}
-.child1 {
-  padding: 1rem;
-}
-.child2 {
-  padding: 1rem;
-}
-.port {
-  height: 100%;
-  width: 100%;
-  overflow: scroll;
-}
-::-webkit-scrollbar {
-  display: none;
-}
-.contents .bank {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  height: 90%;
-  float: left;
-}
-.bank .cashPorts {
-  padding: 0 1rem;
-  height: 100%;
-  width: 50vw;
-}
-.contents .payCash {
-  height: min-content;
-  width: 70vh;
-  margin: 1rem 1rem;
+
+.deletebtn button {
+  background: transparent;
+  outline: none;
+  border: none;
   border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.089);
-}
-.payCash .heading {
-  background: #9854d4;
-  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
-  background: linear-gradient(to top, #562aad, #8742c4);
-  padding: 30px 20px;
-  margin: 0 0 3rem 0;
-}
-.payCash span {
-  font-size: 20px;
-  font-family: "Manrope", sans-serif;
-  font-weight: 800;
-  color: white;
-}
-
-.payCash .accDetails {
-  height: 3rem;
-  text-align: center;
-  background-color: #4a00dd15;
-  margin: 2rem 2rem;
-  border-radius: 5px;
-}
-
-.accDetails input {
-  outline: none;
-  border: none;
-  height: 100%;
-  background-color: transparent;
-}
-
-.accDetails #accNo {
-  width: 75%;
-  padding: 0 1rem;
-}
-.accDetails #balance {
-  width: 25%;
-}
-
-.payCash .withdraw {
-  height: 3rem;
-  text-align: center;
-  background-color: #4a00dd15;
-  margin: 3rem 2rem;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.withdraw input {
-  outline: none;
-  border: none;
-  height: 100%;
-  background-color: transparent;
-  width: 75%;
-  padding: 0 1rem;
-}
-.withdraw button {
-  width: 25%;
-  height: 100%;
-  outline: none;
-  border: none;
-  background: #9854d4;
-  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
-  background: linear-gradient(to top, #562aad, #8742c4);
+  padding: 10px 1rem;
   color: white;
   font-family: "Manrope", sans-serif;
-  font-weight: 800;
+  font-weight: 500;
+  transition: 0.2s box-shadow;
 }
-
-.bank .balancePort {
-  text-align: center;
-  padding: 1rem 1rem;
+.deletebtn button:hover {
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.542);
 }
-.balancePort .balance {
-  height: min-content;
-  width: 50vh;
-  border: 2px solid #562aad5b;
-  border-radius: 2rem;
+.deletebtn button:focus {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.542);
+}
+.body {
+  height: calc(100vh - 10vh);
+  padding: 1em;
   display: flex;
+}
+.body .flex-body {
+  height: 100%;
+  width: 50%;
+}
+
+.flex-body .deposit-box,
+.withdraw-box {
+  height: calc(100vh - 60vh);
+  margin: 1rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.103);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* overflow: hidden; */
+  padding: 1rem;
+  background-color: white;
+  /* background-color: #45199d; */
+  /* background: #9854d4;
+  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
+  background: linear-gradient(to top, #562aad, #8742c4); */
+}
+.header {
+  text-align: center;
+  padding: 10px 3rem;
+  width: 100%;
+  /* color: #45199d; */
+  color: rgba(0, 0, 0, 0.266);
+  /* color: white; */
+  /* color: rgb(0, 0, 0); */
+  font-family: "Manrope", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.acno {
+  padding: 0 1rem;
+  height: 40px;
+  align-items: center;
+  justify-self: center;
+  width: 80%;
+  text-align: center;
+}
+.acno input {
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 5px 1rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  font-size: 13px;
+  /* border-bottom: 0.3px solid rgba(255, 255, 255, 0.514); */
+  border-bottom: 0.3px solid rgba(0, 0, 0, 0.18);
+  /* color: white; */
+  color: black;
+}
+
+input::placeholder {
+  /* color: rgba(255, 255, 255, 0.586); */
+  color: rgba(0, 0, 0, 0.377);
+
+  font-size: 13px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+}
+input:hover::placeholder {
+  /* color: rgba(255, 255, 255, 0.586); */
+  color: rgb(0, 0, 0);
+
+  font-size: 13px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+}
+
+.acno .acnoValid {
+  color: rgb(233, 0, 0);
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 3px;
+  width: 100%;
+}
+.pswd {
+  padding: 0 1rem;
+  height: 40px;
+  align-items: center;
+  justify-self: center;
+  width: 80%;
+  text-align: center;
+}
+.pswd input {
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 5px 1rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  width: 100%;
+  /* border-bottom: 0.3px solid rgba(255, 255, 255, 0.514); */
+  border-bottom: 0.3px solid rgba(0, 0, 0, 0.18);
+  /* color: white; */
+  color: black;
+}
+
+.pswd .pswdValid {
+  color: rgb(233, 0, 0);
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 3px;
+  width: 100%;
+}
+.amnt {
+  padding: 0 1rem;
+  height: 40px;
+  align-items: center;
+  justify-self: center;
+  width: 80%;
+  text-align: center;
+}
+.amnt input {
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 5px 1rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  width: 100%;
+  /* border-bottom: 0.3px solid rgba(255, 255, 255, 0.514); */
+  border-bottom: 0.3px solid rgba(0, 0, 0, 0.18);
+  /* color: white; */
+
+  color: black;
+}
+
+.amnt .amntValid {
+  color: rgb(233, 0, 0);
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 3px;
+  width: 100%;
+}
+
+.button {
+  margin: 5px;
+  padding: 0 1rem;
+  align-items: center;
+  justify-self: center;
+  width: 100%;
+  text-align: center;
+}
+.button .btn {
+  width: 60%;
+  background-color: #45199d;
+  /* background: #350163; */
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px 1rem;
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  transition: 0.2s box-shadow;
+}
+
+.button .btn:hover {
+  box-shadow: 0 25px 20px 7px rgba(0, 0, 0, 0.3);
+}
+.button .btn:focus {
+  box-shadow: 0 25px 20px 7px rgba(0, 0, 0, 0.3);
+}
+/* withdraw box */
+
+.contents .grid-body {
+  padding: 1rem;
+  height: 100%;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 2em;
+  grid-auto-rows: 25vh;
+  grid-auto-columns: 25vh;
+  /* background-color: #6631d1; */
+}
+
+/* deposit box */
+
+/* balance box */
+.grid-body .balance-box {
+  border-radius: 50px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.103);
+  background-color: #45199d;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  overflow: hidden;
-  padding: 1rem 1rem;
 }
-.balance .img {
-  width: 5rem;
-  height: 5rem;
-  margin: 0 0;
-  background-image: url(../../assets/rupees-bank.png);
-  background-size: cover;
-}
-.balance #balance {
-  height: 5rem;
-  width: 80%;
-  color: #311170;
-  border: none;
-  outline: none;
+.balance-box h2 {
+  color: white;
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  padding: 1rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
+}
+.balance-box span {
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 10px;
 }
 
-.paycash .hystory {
-  height: 3rem;
+/* savings box */
+.grid-body .savings-box {
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.103);
+  /* background-color: #45199d; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.savings-box h2 {
+  color: rgba(0, 0, 0, 0.266);
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+.savings-box span {
+  color: rgb(0, 0, 0);
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 10px;
+}
+
+/* percent box */
+.grid-body .percent-box {
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.103);
+  /* background-color: #45199d; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.percent-box h2 {
+  color: rgb(0, 0, 0, 0.266);
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+.percent-box span {
+  color: rgb(0, 0, 0);
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 10px;
+}
+
+/* rout box */
+.grid-body .rout-box {
+  padding: 1rem;
+  background-color: white;
+  grid-column: 1/4;
+  grid-row: 2/4;
+  border-radius: 50px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.103);
+  /* background-color: #45199d; */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+.rout-box .rout-header {
+  /* width: 100%;
+  padding: 10px; */
   text-align: center;
-  background-color: #4a00dd15;
-  margin: 2rem 2rem;
-  border-radius: 5px;
+  padding: 10px 3rem;
+  width: 100%;
+  /* color: #45199d; */
+  color: rgba(0, 0, 0, 0.266);
+  /* color: white; */
+  /* color: rgb(0, 0, 0); */
+  font-family: "Manrope", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.rout-box table {
+  width: 100%;
+  table-layout: fixed;
+  text-align: center;
+}
+table thead {
+  background-color: white;
+  width: 100%;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+table tbody {
+  overflow: hidden;
+  width: 100%;
+}
+th {
+  font-size: 13px;
+  padding: 5px 5px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.266);
+}
+td {
+  font-size: 13px;
+  padding: 5px 5px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.513);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
 }
 
 /* making div disappear */

@@ -61,7 +61,7 @@ export class DataServicesService {
       pswd,
       balance,
     };
-    return this.http.post('http://localhost:3004/signup', user);
+    return this.http.post('http://localhost:3002/signup', user);
   }
 
   login(acno: any, pswd: any) {
@@ -69,6 +69,6 @@ export class DataServicesService {
       acno,
       pswd,
     };
-    return this.http.post('http://localhost:3004/login', loginUser);
+    return this.http.post('http://localhost:3002/login', loginUser);
   }
 }

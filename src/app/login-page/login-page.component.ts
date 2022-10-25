@@ -34,6 +34,19 @@ export class LoginPageComponent implements OnInit {
         (result: any) => {
           if (result) {
             alert(result.message);
+            localStorage.setItem(
+              'currentAcno',
+              JSON.stringify(result.currentacno)
+            );
+            localStorage.setItem(
+              'currentUserName',
+              JSON.stringify(result.currentUser)
+            );
+            localStorage.setItem(
+              'transaction',
+              JSON.stringify(result.transaction)
+            );
+            localStorage.setItem('token', JSON.stringify(result.token));
             this.router.navigateByUrl('dashboard');
           }
         },
