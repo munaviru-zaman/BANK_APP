@@ -86,10 +86,10 @@ export class DashboardComponent implements OnInit {
     this.name = JSON.parse(localStorage.getItem('currentUserName') || '[]');
     this.transArray = JSON.parse(localStorage.getItem('transaction') || '');
 
-    // if (!localStorage.getItem('acno')) {
-    //   alert('Please login again');
-    //   this.router.navigateByUrl('login-page');
-    // }
+    if (!localStorage.getItem('currentAcno')) {
+      alert('Please login again');
+      this.router.navigateByUrl('login-page');
+    }
   }
 
   // clickWithdraw() {
@@ -166,12 +166,12 @@ export class DashboardComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('acno');
+    localStorage.removeItem('currentAcno');
     this.router.navigateByUrl('login-page');
   }
 
   deletacc() {
-    this.delacc = JSON.parse(localStorage.getItem('acno') || '');
+    this.delacc = JSON.parse(localStorage.getItem('currentAcno') || '');
   }
 
   cancel() {
@@ -179,7 +179,18 @@ export class DashboardComponent implements OnInit {
   }
 
   delete(event: any) {
-    alert('acount deleted');
+    this.db.delete(event).subscribe(
+      (result: any) => {
+        if (result) {
+          alert(result.message);
+          localStorage.removeItem('currentAcno');
+          this.router.navigateByUrl('login-page');
+        }
+      },
+      (result) => {
+        alert(result.error.message);
+      }
+    );
   }
 }
 

@@ -513,5 +513,14 @@ td {
 /* making div disappear */
 
 .style {
-  opacity: 0;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.delete-box {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 1;
 }

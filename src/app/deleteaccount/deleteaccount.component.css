@@ -1,0 +1,43 @@
+div {
+  background-color: white;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.254);
+  border-radius: 50px;
+  text-align: center;
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+p {
+  margin: 1rem;
+  font-size: 13px;
+  word-spacing: 1px;
+}
+span {
+  font-family: "Monrope", sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  color: #45199d;
+}
+button {
+  width: 5vw;
+  margin: 1rem;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  color: white;
+}
+.delete {
+  background-color: red;
+}
+.delete:hover {
+  background-color: green;
+}
+.cancel {
+  background-color: #45199d;
+}
+.cancel:hover {
+  background-color: green;
+}

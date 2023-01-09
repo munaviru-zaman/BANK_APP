@@ -71,4 +71,8 @@ export class DataServicesService {
     };
     return this.http.post('http://localhost:3002/login', loginUser);
   }
+
+  delete(acno: any) {
+    return this.http.delete('http://localhost:3002/delete/' + acno);
+  }
 }
