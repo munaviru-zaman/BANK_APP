@@ -10,14 +10,11 @@
   margin: 1rem 0 1rem 2rem;
   display: flex;
   flex-direction: column;
-  /* background: #8800ff;
-  background: -webkit-linear-gradient(to top, #3a1584, #66398c);
-  background: linear-gradient(to top, #1b0051, #2d0087); */
+
   border-radius: 60px;
   width: 20vw;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.103);
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
 }
 .navSide .profile {
@@ -26,7 +23,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #562aad; */
 }
 .navSide .profile .profilePhoto {
   margin: 1rem 0;
@@ -38,11 +34,7 @@
 }
 .navSide .profile span {
   font-size: 1.5rem;
-  /* letter-spacing: 2px;
-  word-spacing: 5px; */
-  /* text-transform: uppercase; */
   font-family: "Poppins", sans-serif;
-  /* font-family: "Manrope", sans-serif; */
   font-weight: 700;
   color: #11006754;
 }
@@ -50,13 +42,9 @@
 .navSide .nav_links {
   margin: 1rem 0;
   word-spacing: 2px;
-  /* margin: 1rem 1rem; */
-  /* text-align: center; */
   font-family: "Manrope", sans-serif;
   font-weight: 600;
   font-size: 15px;
-
-  /* background-color: #562aad; */
 }
 
 .nav_links li {
@@ -72,38 +60,35 @@
   text-decoration: none;
 }
 
-.navSide .nav_links ul a:hover {
+/* .navSide .nav_links ul a:hover {
   color: #110067;
 }
 .navSide .nav_links ul a:focus {
   color: #110067;
-}
+} */
 
 .navSide .logout {
   margin: 3rem;
   bottom: 0;
   position: absolute;
 }
-.logout button {
+/* .logout button {
   background: transparent;
   outline: none;
   border: none;
-  /* font-family: "Manrope", sans-serif; */
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   color: rgba(0, 0, 0, 0.343);
-}
-.logout button:hover {
+} */
+/* .logout button:hover {
   color: #110067;
-}
+} */
 
 .main .contents {
-  /* overflow: hidden; */
   margin: 1rem 1rem;
   display: flex;
   flex-direction: column;
   width: 100vw;
-  /* background-color: #31117032; */
 }
 
 .contents .navbar {
@@ -116,7 +101,7 @@
   font-family: "Manrope", sans-serif;
   font-weight: 800;
 }
-.navbar .search {
+/* .navbar .search {
   background-color: rgb(255, 255, 255);
   padding: 5px 10px;
   border-radius: 30px;
@@ -128,14 +113,14 @@
   border: none;
   width: 88%;
   background: transparent;
-}
-.search input::placeholder {
+} */
+/* .search input::placeholder {
   color: rgba(0, 0, 0, 0.943);
   font-size: 15px;
-}
-.search i {
+} */
+/* .search i {
   color: #562aad;
-}
+} */
 .navbar .nav-links ul {
   list-style-type: none;
   margin: 1rem 0;
@@ -148,16 +133,15 @@
   color: rgba(21, 0, 78, 0.637);
 }
 
-.navbar .nav-links ul li:hover {
+/* .navbar .nav-links ul li:hover {
   color: rgba(21, 0, 78, 0.993);
   cursor: pointer;
 }
 .navbar .nav-links ul li:focus {
   color: rgba(21, 0, 78, 0.993);
-}
+} */
 
 .navbar span {
-  /* font-family: "Plus Jakarta Sans", sans-serif; */
   font-family: "Poppins", sans-serif;
   font-size: 10px;
 }
@@ -173,12 +157,12 @@
   font-weight: 500;
   transition: 0.2s box-shadow;
 }
-.deletebtn button:hover {
+/* .deletebtn button:hover {
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.542);
 }
 .deletebtn button:focus {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.542);
-}
+} */
 .body {
   height: calc(100vh - 10vh);
   padding: 1em;
@@ -200,24 +184,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /* overflow: hidden; */
   padding: 1rem;
   background-color: white;
-  /* background-color: #45199d; */
-  /* background: #9854d4;
-  background: -webkit-linear-gradient(to top, #6631d1, #8b3cd1);
-  background: linear-gradient(to top, #562aad, #8742c4); */
 }
 .header {
   text-align: center;
   padding: 10px 3rem;
   width: 100%;
-  /* color: #45199d; */
   color: rgba(0, 0, 0, 0.266);
-  /* color: white; */
-  /* color: rgb(0, 0, 0); */
   font-family: "Manrope", sans-serif;
-  /* font-family: "Poppins", sans-serif; */
   font-weight: 900;
   font-size: 20px;
 }
@@ -239,14 +214,11 @@
   font-weight: 400;
   width: 100%;
   font-size: 13px;
-  /* border-bottom: 0.3px solid rgba(255, 255, 255, 0.514); */
   border-bottom: 0.3px solid rgba(0, 0, 0, 0.18);
-  /* color: white; */
   color: black;
 }
 
-input::placeholder {
-  /* color: rgba(255, 255, 255, 0.586); */
+/* input::placeholder {
   color: rgba(0, 0, 0, 0.377);
 
   font-size: 13px;
@@ -254,13 +226,12 @@ input::placeholder {
   font-weight: 400;
 }
 input:hover::placeholder {
-  /* color: rgba(255, 255, 255, 0.586); */
   color: rgb(0, 0, 0);
 
   font-size: 13px;
   font-family: "Manrope", sans-serif;
   font-weight: 400;
-}
+} */
 
 .acno .acnoValid {
   color: rgb(233, 0, 0);
@@ -286,9 +257,7 @@ input:hover::placeholder {
   font-weight: 400;
   font-size: 13px;
   width: 100%;
-  /* border-bottom: 0.3px solid rgba(255, 255, 255, 0.514); */
   border-bottom: 0.3px solid rgba(0, 0, 0, 0.18);
-  /* color: white; */
   color: black;
 }
 
@@ -316,9 +285,7 @@ input:hover::placeholder {
   font-weight: 400;
   font-size: 13px;
   width: 100%;
-  /* border-bottom: 0.3px solid rgba(255, 255, 255, 0.514); */
   border-bottom: 0.3px solid rgba(0, 0, 0, 0.18);
-  /* color: white; */
 
   color: black;
 }
@@ -342,7 +309,6 @@ input:hover::placeholder {
 .button .btn {
   width: 60%;
   background-color: #45199d;
-  /* background: #350163; */
   outline: none;
   border: none;
   border-radius: 10px;
@@ -354,13 +320,12 @@ input:hover::placeholder {
   transition: 0.2s box-shadow;
 }
 
-.button .btn:hover {
+/* .button .btn:hover {
   box-shadow: 0 25px 20px 7px rgba(0, 0, 0, 0.3);
 }
 .button .btn:focus {
   box-shadow: 0 25px 20px 7px rgba(0, 0, 0, 0.3);
-}
-/* withdraw box */
+} */
 
 .contents .grid-body {
   padding: 1rem;
@@ -372,12 +337,8 @@ input:hover::placeholder {
   grid-gap: 2em;
   grid-auto-rows: 25vh;
   grid-auto-columns: 25vh;
-  /* background-color: #6631d1; */
 }
 
-/* deposit box */
-
-/* balance box */
 .grid-body .balance-box {
   border-radius: 50px;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.103);
@@ -387,7 +348,7 @@ input:hover::placeholder {
   justify-content: center;
   align-items: center;
 }
-.balance-box h2 {
+/* .balance-box h2 {
   color: white;
   font-family: "Manrope", sans-serif;
   font-weight: 800;
@@ -398,14 +359,12 @@ input:hover::placeholder {
   font-family: "Manrope", sans-serif;
   font-weight: 800;
   font-size: 10px;
-}
+} */
 
-/* savings box */
-.grid-body .savings-box {
+/* .grid-body .savings-box {
   background-color: white;
   border-radius: 50px;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.103);
-  /* background-color: #45199d; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -424,12 +383,10 @@ input:hover::placeholder {
   font-size: 10px;
 }
 
-/* percent box */
 .grid-body .percent-box {
   background-color: white;
   border-radius: 50px;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.103);
-  /* background-color: #45199d; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -446,40 +403,30 @@ input:hover::placeholder {
   font-family: "Manrope", sans-serif;
   font-weight: 800;
   font-size: 10px;
-}
+} */
 
-/* rout box */
-.grid-body .rout-box {
+/* .grid-body .rout-box {
   padding: 1rem;
   background-color: white;
   grid-column: 1/4;
   grid-row: 2/4;
   border-radius: 50px;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.103);
-  /* background-color: #45199d; */
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 .rout-box .rout-header {
-  /* width: 100%;
-  padding: 10px; */
   text-align: center;
   padding: 10px 3rem;
   width: 100%;
-  /* color: #45199d; */
   color: rgba(0, 0, 0, 0.266);
-  /* color: white; */
-  /* color: rgb(0, 0, 0); */
   font-family: "Manrope", sans-serif;
-  /* font-family: "Poppins", sans-serif; */
   font-weight: 900;
   font-size: 20px;
-}
+} */
 
-.rout-box table {
+/* .rout-box table {
   width: 100%;
   table-layout: fixed;
   text-align: center;
@@ -508,19 +455,17 @@ td {
   font-weight: 600;
   color: rgba(0, 0, 0, 0.513);
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
-}
+} */
 
-/* making div disappear */
-
-.style {
+/* .style {
   filter: blur(10px);
   pointer-events: none;
-}
+} */
 
-.delete-box {
+/* .delete-box {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
   z-index: 1;
-}
+} */
